@@ -6,7 +6,7 @@ function ListsComponent() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.get(
-                `http://localhost:8080/entities`,
+                `${process.env.REACT_APP_API_URL}/entities`,
             );
 
             if (result.data.entities) {
@@ -21,7 +21,7 @@ function ListsComponent() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.get(
-                `http://localhost:8080/categories`,
+                `${process.env.REACT_APP_API_URL}/categories`,
             );
 
             if (result.data.categories) {

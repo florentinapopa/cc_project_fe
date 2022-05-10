@@ -12,7 +12,7 @@ function SubmitComponent() {
 
      
             await axios.get(
-                `http://localhost:8080/language/entities`,
+                `${process.env.REACT_APP_API_URL}/language/entities`,
                 {params:{
                     language: language,
                     text: text
@@ -43,7 +43,7 @@ function SubmitComponent() {
 
      
             await axios.get(
-                `http://localhost:8080/language/categories`,
+                `${process.env.REACT_APP_API_URL}/language/categories`,
                 {params:{
                    
                     text: text
@@ -71,7 +71,7 @@ function SubmitComponent() {
     const handleEntitiesSubmit = async (e) => {
      
             await axios.post(
-                `http://localhost:8080/entities`,
+                `${process.env.REACT_APP_API_URL}/entities`,
                 {
                     entities: entities
                 }, {
@@ -90,7 +90,7 @@ function SubmitComponent() {
     const handleCategoriesSubmit = async (e) => {
      
         await axios.post(
-            `http://localhost:8080/categories`,
+            `${process.env.REACT_APP_API_URL}/categories`,
             {
                 categories: categories
             }, {
